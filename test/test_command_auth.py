@@ -159,4 +159,15 @@ def test_implicit_authentication_with_host_url () :
 
     assert not _client.is_authed
 
+def test_remove_this () :
+    import urlparse
+
+    h = 'serf://127.0.0.1:7373?AuthKey=dir'
+    _parsed = list(urlparse.urlparse(h, ), )
+    _parsed[0] = 'http'
+    _parsed[2] = '/'
+    _parsed = urlparse.urlparse(urlparse.urlunparse(_parsed, ), )
+
+    assert 1 == _parsed
+
 
