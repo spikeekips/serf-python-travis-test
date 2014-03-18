@@ -33,7 +33,10 @@ def _parse_host (h, ) :
     if not h.startswith('serf://') :
         h = 'serf://%s' % h
     
-    _parsed = urlparse.urlparse(h, )
+    _parsed = list(urlparse.urlparse(h, ), )
+    _parsed[0] = 'http'
+    _parsed = urlparse.urlparse(urlparse.urlunparse(_parsed, ), )
+
     _host = map(
             lambda x : None if x in ('', -1, ) else x,
             urllib.splitnport(_parsed.netloc, defport=7373, ),
