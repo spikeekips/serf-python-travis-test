@@ -122,7 +122,11 @@ def test_implicit_authentication_with_host_url_success () :
 
     assert not _client.is_authed
 
-    _client.force_leave(**_body).add_callback(_callback, ).request()
+    _responses = _client.force_leave(**_body).add_callback(_callback, ).request()
+    print '.............................'
+    for i in _responses :
+        print i
+    print '.............................'
 
     assert _client.is_authed
 
