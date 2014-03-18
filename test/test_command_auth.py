@@ -120,14 +120,11 @@ def test_implicit_authentication_with_host_url_success () :
             connection_class=AuthFakeConnectionForceLeaveSuccess,
         )
 
+    assert _client._conn.members == 1
+    assert _client._conn.current_member == 1
     assert not _client.is_authed
 
-    _responses = _client.force_leave(**_body).add_callback(_callback, ).request()
-    print '.............................'
-    for i in _responses :
-        print i
-    print '.............................'
-
+    _client.force_leave(**_body).add_callback(_callback, ).request()
     assert _client.is_authed
 
 

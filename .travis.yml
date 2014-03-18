@@ -9,3 +9,4 @@ install:
 
 script: py.test --capture sys -l --full-trace -v test/test_command_auth.py
 
+
