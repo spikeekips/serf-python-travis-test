@@ -51,7 +51,7 @@ def test_0 () :
 
 
 def teste_1 () :
-    h = 'serf://192.168.100.1:7374?AuthKey=this-is-token'
+    h = 'serf://192.168.100.1:7374/?AuthKey=this-is-token'
     if not h.startswith('serf://') :
         h = 'serf://%s' % h
     
@@ -81,7 +81,7 @@ def teste_1 () :
         assert _queries.keys() == ['AuthKey', ]
     
 def teste_2 () :
-    h = 'serf://192.168.100.1:7374?AuthKey=this-is-token'
+    h = 'serf://192.168.100.1:7374/?AuthKey=this-is-token'
     if not h.startswith('serf://') :
         h = 'serf://%s' % h
     
