@@ -165,7 +165,9 @@ def test_remove_this () :
     h = 'serf://127.0.0.1:7373?AuthKey=dir'
     _parsed = list(urlparse.urlparse(h, ), )
     _parsed[0] = 'http'
-    _parsed[2] = '/'
+    if not _parsed[2].startswith('/') :
+        _parsed[2] = '/' + _parsed[2]
+
     _parsed = urlparse.urlparse(urlparse.urlunparse(_parsed, ), )
 
     assert 1 == _parsed
