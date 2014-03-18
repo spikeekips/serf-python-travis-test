@@ -10,10 +10,10 @@ AVAILABLE_HOST_URI_QUERY_KEYS = set([
 
 
 def teste_1 () :
-    h = 'http://192.168.100.1:7374/?AuthKey=this-is-token'
-    _parsed = urlparse.urlparse(h, )
+    h = 'serf://192.168.100.1:7374/?AuthKey=this-is-token'
+    _parsed = urlparse.urlparse(h, scheme='serf', )
 
-    assert _parsed.scheme == 'http'
+    assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
     assert _parsed.path == '/'
     assert _parsed.params == ''
@@ -37,10 +37,10 @@ def teste_1 () :
         assert _queries.keys() == ['AuthKey', ]
 
 def teste_2 () :
-    h = 'http://192.168.100.1:7374/?AuthKey=this-is-token'
-    _parsed = urlparse.urlsplit(h, )
+    h = 'serf://192.168.100.1:7374/?AuthKey=this-is-token'
+    _parsed = urlparse.urlsplit(h, scheme='serf', )
 
-    assert _parsed.scheme == 'http'
+    assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
     assert _parsed.path == '/'
     assert _parsed.query == 'AuthKey=this-is-token'
@@ -64,10 +64,10 @@ def teste_2 () :
 
 
 def teste_3 () :
-    h = 'http://192.168.100.1:7374/index.html?AuthKey=this-is-token'
-    _parsed = urlparse.urlsplit(h, )
+    h = 'serf://192.168.100.1:7374/index.html?AuthKey=this-is-token'
+    _parsed = urlparse.urlsplit(h, scheme='serf', )
 
-    assert _parsed.scheme == 'http'
+    assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
     assert _parsed.path == '/index.html'
     assert _parsed.query == 'AuthKey=this-is-token'
