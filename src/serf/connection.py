@@ -34,13 +34,11 @@ def _parse_host (h, ) :
         h = 'serf://%s' % h
     
     _parsed = list(urlparse.urlparse(h, ), )
-    print ">>>>>>>>>>>>>", (h, _parsed, )
     _parsed[0] = 'http'
     if not _parsed[2].startswith('/') :
         _parsed[2] = '/' + _parsed[2]
 
     _parsed = urlparse.urlparse(urlparse.urlunparse(_parsed, ), )
-    print "<<<<<<<<<<<<<", (_parsed, )
 
     _host = map(
             lambda x : None if x in ('', -1, ) else x,
