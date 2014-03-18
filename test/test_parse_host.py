@@ -59,7 +59,7 @@ def teste_1 () :
 
     assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
-    assert _parsed.path == ''
+    assert _parsed.path == '/'
     assert _parsed.params == ''
     assert _parsed.query == 'AuthKey=this-is-token'
     assert _parsed.fragment == ''
@@ -89,7 +89,7 @@ def teste_2 () :
 
     assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
-    assert _parsed.path == ''
+    assert _parsed.path == '/'
     assert _parsed.query == 'AuthKey=this-is-token'
     assert _parsed.fragment == ''
 
