@@ -119,7 +119,7 @@ def teste_3 () :
 
     assert _parsed.scheme == 'serf'
     assert _parsed.netloc == '192.168.100.1:7374'
-    assert _parsed.path == '/'
+    assert _parsed.path == '/index.html'
     assert _parsed.query == 'AuthKey=this-is-token'
     assert _parsed.fragment == ''
 
