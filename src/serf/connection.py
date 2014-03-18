@@ -35,6 +35,7 @@ def _parse_host (h, ) :
     
     _parsed = list(urlparse.urlparse(h, ), )
     _parsed[0] = 'http'
+    _parsed[2] = '/'
     _parsed = urlparse.urlparse(urlparse.urlunparse(_parsed, ), )
 
     _host = map(
