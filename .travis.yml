@@ -7,6 +7,6 @@ install:
   - pip install . -r requirements.txt --upgrade
   - pip install pytest --use-mirrors
 
-script: py.test --capture sys -l --full-trace -v test/test_command_auth.py
+script: py.test --capture sys -l --full-trace -v test/test_common.py
 
 
